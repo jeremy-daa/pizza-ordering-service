@@ -1,5 +1,13 @@
+import Logout from "@/components/Logout";
+import { getAuthSession } from "@/lib/authOptions";
 import Image from "next/image";
 
-export default function Home() {
-  return <div className=""></div>;
+export default async function Home() {
+  const session = await getAuthSession();
+
+  return (
+    <div className="">
+      <Logout />
+    </div>
+  );
 }
